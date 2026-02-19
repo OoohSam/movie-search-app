@@ -1,9 +1,18 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin: 0;
+  padding:0;
+  text-align: center; 
+  box-sizing: border-box;
 }
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+
 
 
 
@@ -14,4 +23,82 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+/* here is the Loader CSS  */
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  display: inline-flex;
+  gap: 10px;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  height: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(farthest-side,#000000 95%,#0000) 35% 35%/6px 6px no-repeat
+    #e32525;
+  animation: l5 3s infinite;
+}
+@keyframes l5 {
+  0%,11%   {background-position:35% 35%}
+  14%,36%  {background-position:65% 35%}
+  38%,61%  {background-position:65% 65%}
+  64%,86%  {background-position:35% 65%}
+  88%,100% {background-position:35% 35%}
+}
+
+
+/* Movie Container */
+
+.allApp{
+    background: #0f172a; /* dark movie vibe */
+}
+
+
+.movie-container {
+  min-height: 100vh;
+
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.movie-inner {
+  max-width: 1400px;  /* control width on big screens */
+}
+
+
+/* Card css */
+.movie-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card-img-top {
+  height: 350px;
+  object-fit: cover;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeUp 0.5s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
